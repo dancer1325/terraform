@@ -173,3 +173,28 @@ output "regular_users" {
   # temporarySymbols in a list are      index, item        INDEPENDENTLY how you name the variables
   value = {for name, user in var.users : name => user if !user.isadmin}
 }
+
+# ...             grouping model
+variable "users_to_group" {
+  type = map(object({
+    role = string
+  }))
+  default = {
+    "user1" = { role = "admin" }
+    "user2" = { role = "user" }
+    "user3" = { role = "admin" }
+    "user4" = { role = "user" }
+  }
+}
+
+locals {
+  users_by_role = {
+  # If you do NOT use grouping model → terraform would return an error
+  #for name, user in var.users_to_group : user.role => name
+    for name, user in var.users_to_group : user.role => name...         #...      == grouping model
+  }
+}
+
+output "users_by_role" {
+  value = local.users_by_role       # checking how they are grouped and also ordered
+}

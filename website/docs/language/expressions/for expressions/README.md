@@ -30,6 +30,15 @@
     * `if` is allowed → filter / reduce output elements
       * uses
         * 1 collection → 2 collections  -- 'users', 'admin_users' & 'regular_users' --
+  * `…`
+    * grouping model   -- 'users_by_role' --
+      * Optional to use it in the for expression  -- Check all previous examples --
+    * requirements
+      * resultType is `{}` for an object
+    * allows
+      * several output object’s entries / same key    -- 'users_to_group' --
+        * ordering is also applied to the output elements
+        * if you do NOT use grouping model → terraform would return an error
 * `terraform plan` & check in the output that it makes sense
 
 # How to run locally?
