@@ -1,0 +1,12 @@
+- NOT part of the workflows
+    - plan OR
+    - apply
+- allows
+    - validating module configuration / NO impact to existing
+        - state file OR
+        - resources
+- How does it work?
+    - build ephemeral infrastructure
+    - test assertions — against — in-memory state
+
+- TODO:
