@@ -8,5 +8,11 @@
 - How does it work?
     - build ephemeral infrastructure
     - test assertions — against — in-memory state
-
+- == ‘.tftest.hcl’ + helper modules
+    - helper modules
+        - optional
+        - uses
+            - create outside main configuration
+                - test-specific resources &
+                - data sources
 - TODO:
