@@ -1,0 +1,9 @@
+- `terraform init`
+- allows
+    - initializing the directory
+        - ==
+            - downloads the providers defined
+            - installs the providers defined
+- uses
+    - create a new configuration
+    - from version control — check out an existing configuration
