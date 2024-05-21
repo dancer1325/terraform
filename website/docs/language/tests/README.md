@@ -9,6 +9,8 @@
     - build ephemeral infrastructure
     - test assertions — against — in-memory state
 - == ‘.tftest.hcl’ + helper modules
+    - .tftest.hcl
+      - test files
     - helper modules
         - optional
         - uses
