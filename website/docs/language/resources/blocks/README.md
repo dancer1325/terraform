@@ -1,0 +1,6 @@
+- syntax
+- `resource “resource_type” “resource_name” { ... } `
+  - `resource_type`
+    - prefix — maps to — name of the provider
+  - `resource_type.resource_name`
+    - == unique ID of the resource
