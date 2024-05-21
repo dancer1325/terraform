@@ -1,0 +1,4 @@
+- `terraform fmt`
+- allows
+    - updating automatically configurations
+        - returning the file names modified
