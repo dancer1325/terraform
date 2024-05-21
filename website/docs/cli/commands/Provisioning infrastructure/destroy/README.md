@@ -1,0 +1,3 @@
+- `terraform destroy`
+- allows
+    - destroying all remote objects managed by Terraform
