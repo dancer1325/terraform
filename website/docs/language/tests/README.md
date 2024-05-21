@@ -36,6 +36,19 @@
             - := field / optional
               - override the general `variables`
               - TODO:
+          - `module`
+            - := field / optional
+              - 👁️ specify another configuration to test 👁️
+                - **Note:** By default, it’s the path in which you run terraform test
+              - vs traditional `module` blocks, just allowed to specify
+                - `source`
+                  - possible values
+                    - `local`
+                    - `registry`
+                - `version`
+            - uses
+              - setup modules
+              - related but NO created resources by the main configuration
           - TODO: 
         - `variables { … }`
           - ≥ 0 variables blocks
