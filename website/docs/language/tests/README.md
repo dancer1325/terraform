@@ -32,11 +32,16 @@
                 - any existing References to Values
                   - **Note:** 👁️even available to other Custom Conditions 👁️
                 - outputs from current OR previous `run` blocks
+          - `variables`
+            - := field / optional
+              - override the general `variables`
+              - TODO:
           - TODO: 
         - `variables { … }`
           - ≥ 0 variables blocks
           - 👁️order does NOT matter 👁️
           - processed all these blocks before processing run blocks
+          - it will be applied to ALL run blocks
         - `provider “type” { … }`
           - ≥ 0 provider blocks
           - 👁️order does NOT matter 👁️
