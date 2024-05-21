@@ -17,7 +17,7 @@
       - syntax
         - `run “someName” { … }`
           - ≥ 1 of [run](https://developer.hashicorp.com/terraform/language/tests#run-blocks) blocks
-            - 👁️executed in order 👁️
+            - 👁️executed in order sequentially 👁️
           - `command`
             - := field / optional
               - possible values
