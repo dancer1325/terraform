@@ -1,0 +1,9 @@
+- `terraform apply`
+    - output
+        - execution plan
+        - format == `git diff`
+            - `+ ...` == be created
+        - `known after apply`
+            - == once the resource is created → value is known
+- allows
+    - applying the configuration
