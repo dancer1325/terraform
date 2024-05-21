@@ -1,0 +1,5 @@
+- `terraform validate`
+- allows
+    - validating configuration is
+        - syntactically valid
+        - internally consistent
