@@ -1,0 +1,9 @@
+- 👁️== most important element in Terraform language 👁️
+- allows
+    - defining components of your infrastructure
+      - _Example:_ virtual networks, compute instances, DNS records
+- types
+    - physical or virtual component
+      - _Example:_ EC2 instance
+    - logical resource
+      - _Example:_ Heroku application
