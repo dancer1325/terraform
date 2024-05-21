@@ -1,0 +1,7 @@
+- `terraform test`
+- how does it work?
+    - locates ‘.tftest.hcl’ files within your configuration directory
+    - provision the infrastructure / specified testing file
+    - assertions in the test file — are run against — provisioned infrastructure
+    - destroys the provisioned infrastructure
+- TODO:
