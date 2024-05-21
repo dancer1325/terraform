@@ -14,3 +14,5 @@
         - uses
             - during `terraform test`
                 - == correctness of any logical operation
+        - use cases
+          - for module authors
