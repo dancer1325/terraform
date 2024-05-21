@@ -1,0 +1,3 @@
+- `terraform state list`
+- allows
+    - listing the resources in project’s state
