@@ -1,7 +1,9 @@
 - `terraform test`
 - how does it work?
     - locates ‘.tftest.hcl’ files within your configuration directory
+      - under ‘/tests’ by default
     - provision the infrastructure / specified testing file
+      - == ⚠️ can create REAL infrastructure⚠️
     - assertions in the test file — are run against — provisioned infrastructure
     - destroys the provisioned infrastructure
 - TODO:
