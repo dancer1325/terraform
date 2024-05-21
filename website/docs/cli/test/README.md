@@ -1,0 +1,16 @@
+- categories to test
+    - validate configuration & infrastructure
+        - types
+            - Custom Conditions
+            - Checks
+        - uses
+            - during `terraform plan` & `terraform apply`
+                - == aspects of your configuration / should always be true
+        - if you have a terraform module →
+            - executed &
+            - exposed to module users
+    - unit & integration test
+        - tests
+        - uses
+            - during `terraform test`
+                - == correctness of any logical operation
