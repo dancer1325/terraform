@@ -14,7 +14,30 @@
     - share the global namespace with — traditional provider
       - if you define several in a test → you need to declare `alias`
     - == traditional provider — during terraform test —
+    - `override_resource`
+    - `override_data`
 - TODO:
+- Overrides
+  - types
+    - `override_resource {…}`
+    - `override_data {…}`
+    - `override_module {…}`
+  - uses
+    - under `mock_provider`
+    - under `run`
+    - top level of test file
+  - allowed attributes
+    - `target = NameToOverride`
+      - allowed for ALL types
+    - `outputs`
+      - valid for
+        - `override_module`
+      - optional
+    - `values`
+      - optional
+      - valid for
+        - `override_resource`
+        - `override_data`
 
 ## Example
 * Check 'main.tf' & subfolder '/tests'
