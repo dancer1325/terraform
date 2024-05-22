@@ -23,6 +23,7 @@
               - possible values
                 - `apply`
                   - default one
+                  - ⚠️Once the test has ended up → resources created are destroyed⚠️
                 - `plan`
                   - → 👁️infrastructure NOT created👁️== unit testing
           - `assert`
