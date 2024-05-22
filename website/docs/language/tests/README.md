@@ -56,6 +56,8 @@
           - `providers`
             - := field / optional
               - override the general `providers` 
+          - `override_….`
+            - Check '/Mocks'
           - TODO: 
         - `variables { … }`
           - ≥ 0 variables blocks
@@ -66,6 +68,8 @@
           - ≥ 0 provider blocks
           - 👁️order does NOT matter 👁️
           - processed all these blocks before processing run blocks
+        - `override_`
+          - Check '/Mocks'
     - helper modules
         - optional
         - uses
