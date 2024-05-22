@@ -52,6 +52,7 @@
             - uses
               - setup modules
               - related but NO created resources by the main configuration
+            - if you add a new helper module → terraform init 
           - TODO: 
         - `variables { … }`
           - ≥ 0 variables blocks
