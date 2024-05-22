@@ -48,3 +48,5 @@
 * How to run tests?
   * `terraform init`
   * `terraform test`
+  * `terraform destroy`
+    * clean up all resources created
