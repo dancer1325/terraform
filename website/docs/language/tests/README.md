@@ -32,6 +32,8 @@
                 - any existing References to Values
                   - **Note:** 👁️even available to other Custom Conditions 👁️
                 - outputs from current OR previous `run` blocks
+              - ≥1 / run block
+                - just if ALL are passed → run block is passed
           - `variables`
             - := field / optional
               - override the general `variables`
