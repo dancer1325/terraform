@@ -10,3 +10,4 @@
 
 # How to run locally?
 * `terraform init`
+* `terraform plan`
