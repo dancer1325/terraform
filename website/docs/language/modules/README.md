@@ -1,0 +1,38 @@
+- 👀 := set of Terraform configuration files in 1! single directory 👀
+    - every Terraform configuration is part of a module
+- === Collection of files kept together in a directory
+  - `.tf` & / or
+  - `.tf.json`
+- allows
+  - organize configuration
+    - make easier
+      - navigate
+      - understand
+      - update
+    - via
+      - directories
+      - workspaces
+  - re-use configuration
+    - === modules can be reused (public if you publish it / private)
+  - encapsulate configuration into distinct logical components
+    - 👀module names are unique 👀
+  - provide consistency & ensure best practices
+  - self service
+- Type of modules
+  - **root module**
+    - := resources defined in `.tf` files in the **main working directory**
+    - ≥ 1 root module / Terraform configuration
+  - **child modules**
+    - := module ← which is called by — another module
+      - *Example:* root module — can call → another modules
+    - once the module is found →
+      - loads it
+      - process it
+    - rules
+      - multiple times can be called / same configuration
+      - multiple configurations — can use — same child module
+  - **local module**
+    - := module which is loaded from the local filesystem
+  - **remote module**
+    - := module which is loaded from a remote source
+    - *Example:* Terraform Registry, SCV, HTTP URLs, Terraform Cloud, Terraform Enterprise
