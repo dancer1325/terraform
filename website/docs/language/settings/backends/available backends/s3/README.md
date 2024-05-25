@@ -10,6 +10,8 @@
         key = “PathInTheS3BucketToStoreIt”
         region = 
         dynamodb_table = “DynamoDBTableName”
+        workspace_key_prefix = "PrefixAppliedToStatepath"
+        encrypt = booleanToEnableServerSideEncryption
         …
     }
     ```
@@ -21,6 +23,11 @@
       - non-default workspace
     - `env`
       - default workspace
+  - `encrypt`
+    - enable server side encryption
+  - `dynamodb_table`
+    - “LockID”
+      - name of the partition key / type string
 - TODO:
 
 ## Example
@@ -34,6 +41,8 @@
   * Problems:
     * Problem1: "Failed to get existing workspaces: Unable to list objects in S3 bucket "mybucket" with prefix "env:/": operation error S3: ListObjectsV2"
       * Solution: Create the S3 bucket previously
+    * Problem2: "operation error DynamoDB ... ResourceNotFoundException:"
+      * Solution: Create the DynamoDB table previously
 * `terraform init -migrate-state`
   * if you make a change in the backend configuration
   * Problems

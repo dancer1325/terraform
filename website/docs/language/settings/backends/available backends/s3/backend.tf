@@ -11,5 +11,7 @@ terraform {
     #region = var.s3_region
     region = "us-east-1"
     workspace_key_prefix = "prefixwork"
+    encrypt = true
+    dynamodb_table = "alfred-example-state-lock"
   }
 }
