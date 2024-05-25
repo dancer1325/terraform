@@ -34,4 +34,5 @@
                 - `-backend-config=PathToTheFile`
                 - `-backend-config="KEY=VALUE”`
                 - interactively asked during `terraform init`
+    - recommended to pass the credentials 
 - TODO:
