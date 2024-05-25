@@ -4,6 +4,8 @@
   - if `[outputName]` NOT specified -> returns all
   - `-json`
     - get the output in .json
+  - `-raw`
+    - get the output without wrapping under ''
   - TODO:
 
 ## Examples
@@ -16,3 +18,4 @@
     * Why does it retrieve the default value? TODO:
   * `terraform output -json instance_ips`
     * format the output in json format
+  * `terraform output -raw instance_ips`
