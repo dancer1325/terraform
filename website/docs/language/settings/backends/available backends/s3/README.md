@@ -48,6 +48,8 @@
   * Problems
     * Problem1: Why NO changes applied if you run `terraform apply`?
       * Solution: TODO:
+* `terraform destroy`
+  * clean up all the infrastructure
 ### Notes
 * Why NO information stored in the dynamoDb?
   * Solution: TODO:
