@@ -14,7 +14,13 @@
     }
     ```
   - `S3BucketName` must pre-exist
-  - `key` is generated
+  - `key`
+    - if you use a non-default workspace → statePath = workspaceKeyPrefix/workspaceName/key
+  - `workspace_key_prefix`
+    - uses
+      - non-default workspace
+    - `env`
+      - default workspace
 - TODO:
 
 ## Example
@@ -28,3 +34,8 @@
   * Problems:
     * Problem1: "Failed to get existing workspaces: Unable to list objects in S3 bucket "mybucket" with prefix "env:/": operation error S3: ListObjectsV2"
       * Solution: Create the S3 bucket previously
+* `terraform init -migrate-state`
+  * if you make a change in the backend configuration
+  * Problems
+    * Problem1: Why NO changes applied if you run `terraform apply`?
+      * Solution: TODO:

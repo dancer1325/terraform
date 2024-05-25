@@ -10,5 +10,6 @@ terraform {
     # 2. variable
     #region = var.s3_region
     region = "us-east-1"
+    workspace_key_prefix = "prefixwork"
   }
 }
