@@ -1,22 +1,25 @@
 - NOT part of the workflows
-    - plan OR
-    - apply
+    - `terraform plan` NOR
+    - `terraform apply`
 - allows
     - validating module configuration / NO impact to existing
         - state file OR
         - resources
+- types
+  - == integration test
+    - by default
+    - == create real infrastructure
+  - == unit test
+    - via `run ... { command = plan ... }`
+    - Check '/mocks'
 - How does it work?
-    - by default, build ephemeral infrastructure
-      - == create real infrastructure → == integration test
-        - **Reason:** 🧠 Check `run` block below 🧠
-    - test assertions — against — in-memory state
+  - test assertions — against — in-memory state
 - == ‘.tftest.hcl’ OR ‘.tftest.json’ + helper modules
     - .tftest.hcl OR ‘.tftest.json’
       - test files
-      - 1 test / test file
       - syntax
         - `run “someName” { … }`
-          - ≥ 1 of [run](https://developer.hashicorp.com/terraform/language/tests#run-blocks) blocks
+          - ≥ 1 of [run](https://developer.hashicorp.com/terraform/language/tests#run-blocks) blocks allowed
             - 👁️executed in order sequentially 👁️
           - `command`
             - := field / optional
@@ -60,14 +63,14 @@
             - Check '/Mocks'
           - TODO: 
         - `variables { … }`
-          - ≥ 0 variables blocks
-          - 👁️order does NOT matter 👁️
-          - processed all these blocks before processing run blocks
+          - ≥ 0 variables blocks allowed
+            - 👁️order does NOT matter 👁️
+            - processed all these blocks before processing run blocks
           - it will be applied to ALL run blocks
         - `provider “type” { … }`
-          - ≥ 0 provider blocks
-          - 👁️order does NOT matter 👁️
-          - processed all these blocks before processing run blocks
+          - ≥ 0 provider blocks allowed
+            - 👁️order does NOT matter 👁️
+            - processed all these blocks before processing run blocks
         - `override_`
           - Check '/Mocks'
     - helper modules
