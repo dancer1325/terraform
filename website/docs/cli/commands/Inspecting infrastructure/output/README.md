@@ -15,7 +15,9 @@
     * Reason: outputs come from configuration's state file
 * `terraform output`
   * `terraform output password`
-    * Why does it retrieve the default value? TODO:
+    * value is displayed
+      * Reason: sensitive only applies to `terraform plan / apply / destroy`
   * `terraform output -json instance_ips`
     * format the output in json format
   * `terraform output -raw instance_ips`
+
