@@ -9,4 +9,8 @@ data "aws_ami" "example" {
   }*/
 }
 
+// Added just to output the dataSource
+output "ami" {
+  value = data.aws_ami.example
+}
 

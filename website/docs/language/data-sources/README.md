@@ -38,4 +38,6 @@
   * Problems:
     * Problem1: "Error: Your query returned no results."
       * Solution: Adjust the filters
+  * Check that output returns values
 * `terraform apply`
+  * Check that output returns values
