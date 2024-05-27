@@ -79,13 +79,14 @@
             - create outside main configuration
                 - test-specific resources &
                 - data sources
-
 - TODO:
 
 ## Example
 * Check 'main.tf' & subfolder '/tests'
 * How has it been created?
   * manually
+    * 'main.tf' contains ALL
+      * [aws_s3_bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket)
   * `terraform fmt`
     * format files in the path in which it's run == if you want to execute on '/tests' -> navigate to that path
 * How to run tests?
