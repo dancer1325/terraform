@@ -14,8 +14,36 @@
     - share the global namespace with — traditional provider
       - if you define several in a test → you need to declare `alias`
     - == traditional provider — during terraform test —
+    - about attributes
+      - if required resource attributes → you must set
+      - if you do NOT provider a value for optional computed attribtue → Terraform generates automatically
+        - Number → 0
+        - Bool → false
+        - String → random 8 alphanumeric characters
+        - Collections → empty
+        - Objects → all required subattributes / same previous rules
+    - `mock_resource` & `mock_data`
+      - allows
+        - mocking targeted resources & data sources
+      -  +=0 allowed
     - `override_resource`
     - `override_data`
+```
+mock_provider “providerName” {
+  alias = "..."
+  source = PathToMockedProvider
+  mock_resource "resource_name" {
+    defaults = {
+      resourceAttributes = ...
+    }
+  mock_data "data_name" {
+    defaults = {
+      resourceAttributes = ...
+    }
+  }
+  ...
+ }
+```
 - TODO:
 - Overrides
   - types
