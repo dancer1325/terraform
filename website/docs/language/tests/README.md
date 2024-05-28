@@ -14,7 +14,7 @@
     - Check '/mocks'
 - How does it work?
   - test assertions — against — in-memory state
-- == ‘.tftest.hcl’ OR ‘.tftest.json’ + helper modules
+- == ‘.tftest.hcl’ OR ‘.tftest.json’ + helper modules — 👁️under test/ 👁️ — 
     - .tftest.hcl OR ‘.tftest.json’
       - test files
       - syntax
@@ -45,16 +45,25 @@
           - `module`
             - := field / optional
               - 👁️ specify another configuration to test 👁️
-                - **Note:** By default, it’s the path in which you run terraform test
+                - **Note:** By default, it’s the path in which you run `terraform test` OR `terraform test -chdir`
               - vs traditional `module` blocks, just allowed to specify
+              ```
+                run {
+                  ...
+                  module {
+                    source = ...
+                    version = ....
+                  }
+                }
+              ```
                 - `source`
                   - possible values
                     - `local`
                     - `registry`
                 - `version`
             - uses
-              - setup modules
-              - related but NO created resources by the main configuration
+              - setup modules  / create infrastructure for testing
+              - validate secondary infrastructure
             - if you add a new helper module → terraform init 
           - `providers`
             - := field / optional
