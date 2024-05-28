@@ -1,5 +1,3 @@
-# ./modules/s3_data/main.tf
-
 variable "data_bucket_name" {
   type = string
 }
@@ -10,5 +8,7 @@ data "aws_s3_object" "data_bucket" {
 }
 
 output "data" {
-  value = jsondecode(data.aws_s3_object.data_bucket.body)
+  # data.aws_s3_object.data_bucket.body       is already a JSON string
+  #value = jsondecode(data.aws_s3_object.data_bucket.body)
+  value = data.aws_s3_object.data_bucket.body
 }

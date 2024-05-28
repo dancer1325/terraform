@@ -1,8 +1,8 @@
-# bucket_name.tftest.hcl
-
 mock_provider "aws" {}
 
 run "sets_correct_name" {
+  # command   NOT specified -> apply
+  # module  NOT specified -> directory in which you run `terraform test`
   variables {
     bucket_name = "my-bucket-name"
   }
