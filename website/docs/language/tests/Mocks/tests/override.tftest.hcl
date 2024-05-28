@@ -1,4 +1,4 @@
-# 1. Override under mock_provider
+# 1. Override data under mock_provider at root level
 mock_provider "aws" {
   override_data {
     target = module.credentials.data.aws_s3_object.data_bucket
@@ -9,11 +9,14 @@ mock_provider "aws" {
 }
 
 run "test" {
+  # command   NOT specified -> apply
+  # module  NOT specified -> directory in which you run `terraform test`
   variables {
     bucket_name = "override-bucket-name"
   }
   assert {
-    condition     = jsondecode(local_file.credentials_json.content).username == "username"
+    #condition     = jsondecode(local_file.credentials_json.content).username == "username"
+    condition     = local_file.credentials_json.content.username == "username"
     error_message = "incorrect username"
   }
 }

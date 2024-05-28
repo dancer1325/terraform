@@ -84,6 +84,13 @@ mock_provider “providerName” {
         * Solution: `data.aws_s3_object.data_bucket.body` is already a JSON string -> remove `jsondecode()`
       * Problem3: 'tests/override.tftest.hcl' Error: Unsupported attribute jsondecode(local_file.credentials_json.content).username == "username"
         * Solution: TODO:
+  * `terraform apply`
+    * Problems:
+      * Problem1: "Error: reading S3 Bucket (my_company_bucket_name) Object (credentials.json): couldn't find resource"
+        * Solution: Change 'module.credentials.data_bucket_name' to "alfred"
+      * Problem2: "Error: reading S3 Bucket (alfred) Object (credentials.json)  api error MovedPermanently: Moved Permanently"
+        * Attempt1: Specify provider.aws, not mocked
+        * Solution: Specify another bucketName, since it must be unique cross ALL accounts
   * `terraform destroy`
     * clean up all resources created
 * [local_file](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file)
