@@ -33,7 +33,8 @@ module "credentials" {
 
 resource "local_file" "credentials_json" {
   filename = "credentials.json"
-  content  = jsonencode(module.credentials.data)
+  #content  = jsonencode(module.credentials.data)
+  content  = module.credentials.data
 }
 
 output "module_credentials_data" {

@@ -83,6 +83,11 @@ mock_provider “providerName” {
         * Note: Since 'use_real_provider' fails -> 'use_mocked_provider' is skipped
         * Solution: `data.aws_s3_object.data_bucket.body` is already a JSON string -> remove `jsondecode()`
       * Problem3: 'tests/override.tftest.hcl' Error: Unsupported attribute jsondecode(local_file.credentials_json.content).username == "username"
+        * Attempt1: make replacement of `\\` `replace(jsondecode(local_file.credentials_json.content),"\\\"","\"")`
+        * Attempt2: Replace mocked value
+        * Attempt3: Remove `jsondecode(jsonencode())` which can brings problems
+        * Solution: TODO:
+      * Problem4:  local_file.credentials_json.content.username == "username". There is no variable named "local_file".
         * Solution: TODO:
   * `terraform apply`
     * Problems:

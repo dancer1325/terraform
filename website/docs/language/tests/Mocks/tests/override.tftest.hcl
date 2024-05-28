@@ -3,6 +3,8 @@ mock_provider "aws" {
   override_data {
     target = module.credentials.data.aws_s3_object.data_bucket
     values = {
+      #body = "{\"username\":\"username\",\"password\":\"password\"}"
+      #body = "{\"username\"=\"username\",\"password\"=\"password\"}"
       body = "{\"username\":\"username\",\"password\":\"password\"}"
     }
   }
@@ -15,8 +17,10 @@ run "test" {
     bucket_name = "override-bucket-name"
   }
   assert {
-    #condition     = jsondecode(local_file.credentials_json.content).username == "username"
+    # condition     = replace(jsondecode(local_file.credentials_json.content),"\\\"","\"").username == "username"
+    #condition     = local_file.credentials_json.content.username == "username"
     condition     = local_file.credentials_json.content.username == "username"
+    #condition     = jsondecode(local_file.credentials_json.content).username == "username"
     error_message = "incorrect username"
   }
 }
