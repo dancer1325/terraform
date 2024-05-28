@@ -1,0 +1,1 @@
+pass_via_file = "alfred-test"

@@ -79,6 +79,10 @@
             - create outside main configuration
                 - test-specific resources &
                 - data sources
+- 👁️variables precedence from higher → lower 👁️
+  - `run.variables`
+  - `variables` in test files
+  - follow the typical input variables precedence
 - TODO:
 
 ## Example
@@ -91,4 +95,4 @@
     * format files in the path in which it's run == if you want to execute on '/tests' -> navigate to that path
 * How to run tests?
   * `terraform init`
-  * `terraform test`
+  * `terraform test` OR `terraform test -var pass_via_file=alfred-test`

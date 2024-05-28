@@ -34,5 +34,13 @@ run "overrides_root_level_value" {
     condition     = aws_s3_bucket.bucket.bucket == "other-bucket"
     error_message = "S3 bucket name did not match expected"
   }
+}
 
+# condition -- can refer to -- any reference to value
+run "check_output_bucket_name" {
+  command = plan
+  assert {
+    condition = output.bucket_name == "test-bucket"
+    error_message = "Wrong output bucket_name got"
+  }
 }
