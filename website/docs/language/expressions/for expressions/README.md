@@ -2,17 +2,17 @@
 * [Install terraform](https://developer.hashicorp.com/terraform/install)
 
 # for
-* `resultTypeStart for temporarySymbol in inputType : expression resultTypeEnd`
+* `resultTypeStart for temporarySymbol in inputType : expression... resultTypeEnd`
   * allows
-    * complex type value → another complex type value or nothing -- 'value_of_upper_elements' & 'value_of_filter_list' --
+    * complex type value → another complex type value OR nothing -- 'value_of_upper_elements' & 'value_of_filter_list' --
       * since unordered types `set`, `map` or `object` — can be converted to → ordered types `list` or `tuple` → Terraform apply an ordering
-        * `map` or `object` — via key / attribute name by lexical sorting → `list` or `tuple`
-        * `set(string)` — via value by lexical sorting → `list` or `tuple`
-        * `set(!=string)` — via arbitrary ordering → `list` or `tuple`
+        * `map` or `object` — via key / attribute name by lexical sorting → `list` or `tuple` -- 'map_convert_to_list' & 'object_attributes_randomposition' --
+        * `set(string)` — via value by lexical sorting → `list` or `tuple` -- 'set_string_randompositionvalues' --
+        * `set(!=string)` — via arbitrary ordering → `list` or `tuple` -- 'set_nostring_convert_to_list' --
   * resultType == `resultTypeStart` or `resultTypeEnd`
     * available ones
       * `[]` -- produces -> tuple / list
-      * if you want to produce a set → `toset`
+      * if you want to produce a set → `toset` -- 'result_type_toset' --
       * `{}` -- produces -> map / object     -- 'value_of_list_to_map' --
   * `inputType`
     * available ones
@@ -43,3 +43,9 @@
 
 # How to run locally?
 * `terraform init`
+* `terraform plan`
+* `terraform output` 
+  * Check the outputs
+  * Problems:
+    * Problem1: "Warning: No outputs found"
+      * Solution: `terraform refresh`

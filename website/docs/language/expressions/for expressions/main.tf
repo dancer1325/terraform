@@ -47,7 +47,6 @@ variable "object_attributes_randomposition" {
   }
 }
 
-
 output "object_convert_to_list" {
   # order applied in the execution based on the object's attributeName
   value = [ for attributeName, attributeValue in var.object_attributes_randomposition : "object_convert_to_list - ${attributeName} - ${attributeValue}"]
@@ -75,6 +74,13 @@ output "set_nostring_convert_to_list" {
   value = [for item in var.set_no_string : "set_nostring_convert_to_list - ${item}"]
 }
 
+
+
+#     resultType      tuple/list
+output "result_type_tupleorlist" {
+  value = [for item in var.list : upper(item)]
+}
+
 #     resultType      set         -- via -- toset
 output "result_type_toset" {
   value = toset([for item in var.set_no_string : "result_type_toset - ${item}"])
@@ -84,6 +90,8 @@ output "result_type_toset" {
 output "value_of_list_to_map" {
   value = {for item, index in var.list : index => item}
 }
+
+
 
 #     inputType    set
 variable "set" {
@@ -108,6 +116,8 @@ variable "map" {
 output "value_for_map" {
   value = { for key, value in var.map : upper(key) => upper(value) }
 }
+
+
 
 #     temporarySymbol     set       1! is accesible
 output "temporary_symbol_set" {
@@ -135,6 +145,8 @@ output "temporary_symbol_map_2" {
   # temporarySymbols here are      key, value
   value = {for key, value in var.map : key => "temporary_symbol_map_2-${key}-${value}"}      # key, value
 }
+
+
 
 # expression          filter  via `if`
 variable "users" {
@@ -173,6 +185,8 @@ output "regular_users" {
   # temporarySymbols in a list are      index, item        INDEPENDENTLY how you name the variables
   value = {for name, user in var.users : name => user if !user.isadmin}
 }
+
+
 
 # ...             grouping model
 variable "users_to_group" {
