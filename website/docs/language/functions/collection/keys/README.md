@@ -5,4 +5,4 @@
 
 ## Examples
 * `terraform console` &
-  * `keys({a=1, d=2, c=3})`
+  * `keys({a=1, d=2, c=3})` -- check the lexicography order --
