@@ -1,3 +1,4 @@
+* `md5("AString")`
 * allows
   * string ->
     * encoded as UTF-8
