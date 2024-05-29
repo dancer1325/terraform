@@ -85,10 +85,11 @@ mock_provider “providerName” {
       * Problem3: 'tests/override.tftest.hcl' Error: Unsupported attribute jsondecode(local_file.credentials_json.content).username == "username"
         * Attempt1: make replacement of `\\` `replace(jsondecode(local_file.credentials_json.content),"\\\"","\"")`
         * Attempt2: Replace mocked value
-        * Attempt3: Remove `jsondecode(jsonencode())` which can brings problems
-        * Solution: TODO:
+        * Solution: Remove `jsondecode(jsonencode())` which can brings problems
       * Problem4:  local_file.credentials_json.content.username == "username". There is no variable named "local_file".
-        * Solution: TODO:
+        * Solution: Use again `jsondecode(...)`
+      * Problem5: 'tests/override_through_module.tftest.hcl' module.credentials.data is object with 2 attributes - Inappropriate value for attribute "content": string required.
+        * Solution: Convert to real JSON string "{\"username\":\"username\",\"password\":\"password\"}"'
   * `terraform apply`
     * Problems:
       * Problem1: "Error: reading S3 Bucket (my_company_bucket_name) Object (credentials.json): couldn't find resource"
