@@ -1,7 +1,3 @@
-# Prerequisites
-* [Install terraform](https://developer.hashicorp.com/terraform/install)
-
-# for
 * `resultTypeStart for temporarySymbol in inputType : expression... resultTypeEnd`
   * allows
     * complex type value → another complex type value OR nothing -- 'value_of_upper_elements' & 'value_of_filter_list' --
@@ -41,7 +37,7 @@
         * if you do NOT use grouping model → terraform would return an error
 * `terraform plan` & check in the output that it makes sense
 
-# How to run locally?
+## How to run locally?
 * `terraform init`
 * `terraform plan`
 * `terraform output` 
