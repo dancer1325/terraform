@@ -17,3 +17,4 @@
   * `yamldecode("{a: &foo [1, 2, 3], b: *foo}")` -- json structure directly ? --
   * `yamldecode("{a: &foo [1, *foo, 3]}")`
   * `yamldecode("{a: !not-supported foo}")`
+  * `yamldecode(file("example.yaml"))`
