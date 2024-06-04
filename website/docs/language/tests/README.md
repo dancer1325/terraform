@@ -17,6 +17,97 @@
 - == ‘.tftest.hcl’ OR ‘.tftest.json’ + helper modules — 👁️under test/ 👁️ — 
     - .tftest.hcl OR ‘.tftest.json’
       - test files
+      ```
+            variables {
+              ...
+            }
+            provider “type” {
+              ...
+            }
+            mock_provider “providerName” {
+              ...
+            }
+            override_resource {
+              ...  
+            }
+            override_data {
+              ...  
+            }
+            override_module {
+               ... 
+            } 
+            run "someName" {
+              ...
+            }
+      ```
+      ```
+      variables {
+        keyi = valuei
+      }
+      provider “type” {
+        providerArguments
+      }
+      mock_provider “providerName” {
+        alias = "..."
+        source = PathToMockedProvider
+        mock_resource "resource_name" {
+          defaults = {
+            resourceAttributes = ...
+          }
+        mock_data "data_name" {
+          defaults = {
+            resourceAttributes = ...
+          }
+        }
+        override_resource {
+          ...
+        }
+        override_data {
+          ...
+        }
+       }
+      override_resource {
+         target = ResourceToOverride 
+         values = 
+      }
+      override_data {
+        target = DataToOverride
+        values =  
+      }
+      override_module {
+         target = ModuleToOverride
+         outputs = 
+      } 
+      run "someName" {
+        command = ...
+        assert {
+          condition = ...
+          error_message= ...
+        }
+        variables {
+          keyi = valuei
+        }
+        provider "type" {
+          providerArguments
+        }
+        override_resource {
+         target = ResourceToOverride 
+         values = 
+        }
+        override_data {
+          target = DataToOverride
+          values =  
+        }
+        override_module {
+         target = ModuleToOverride
+         outputs = 
+        }
+        module {
+          source = ...
+          version= ...
+        }
+      }
+      ```
       - syntax
         - `run “someName” { … }`
           - ≥ 1 of [run](https://developer.hashicorp.com/terraform/language/tests#run-blocks) blocks allowed
