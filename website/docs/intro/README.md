@@ -1,0 +1,14 @@
+- How does it work?
+    - via APIs provided by Providers
+      - Terraform Registry
+    - stages
+      - write / code / define the infra resources
+        - declarative files == describe the end state of the infrastructure
+      - plan
+        - == execution plan / describe the infrastructure to create OR update OR destroy
+          - changes — determined comparing with — State
+      - apply
+        - apply planned operations / 👁️respect the resource dependencies 👁️
+          - resource graph of dependencies
+            - created
+            - — based on it — create 👁️IN PARALLEL non-dependent resources 👁️
