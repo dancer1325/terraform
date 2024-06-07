@@ -1,0 +1,24 @@
+- Terraform Community Edition
+    - == tool /
+        - free
+        - downloadable
+        - interactible — via — CL
+- HCP Terraform
+    - == SaaS application / run Terraform
+        - environment
+            - stable
+            - remote
+        - store state & secrets
+        - manageable role-based access
+    - provide
+        - UI — to manage — all easily
+        - integration with
+            - Terraform CLI
+            - version control systems
+        - additional API
+        - private Terraform registry
+        - enforcing best practices & security rules — via — Sentinel
+    - [pricing](https://www.hashicorp.com/products/terraform/pricing)
+- Terraform Enterprise
+    - private instance of HCP Terraform
+        - == self-hosted distribution of HCP
