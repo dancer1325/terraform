@@ -1,0 +1,13 @@
+- Requisites
+    - ⚠️JUST AVAILABLE if it’s allowed by your backend ⚠️
+      - **Note:** NOT supported by all
+- allows
+    - if an operation / writes the state is on going → state is locked
+        - == avoids corrupting the state == transactional in program languages
+        - NO message is displayed informing on it
+- if state locking
+    - fails → Terraform will NOT continue
+    - takes longer → Terraform outputs a status message
+- `terraformCommand -lock`
+    - disable state locking
+- `terraform force-unlock [options] LOCK_ID` 
