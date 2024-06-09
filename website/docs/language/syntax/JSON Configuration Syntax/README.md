@@ -1,0 +1,13 @@
+- allows
+    - representing Terraform Language constructs / — defined in terms of –– Configuration Syntax / HCL
+        - — applied to — ALL files / name `*.tf.json`
+- characteristics
+    - UNfriendly to humans
+- [specification](https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md) — HCL —
+- uses
+    - + other systems / without integration to HCL library — to generate — IAC
+- main constructs
+  - == nativeConfiguration's main constructs
+  - `labeli`
+    - — represented as — nested objects
+- TODO:
