@@ -5,6 +5,10 @@
     - other Hashicorp products
 - [specification](https://github.com/hashicorp/hcl/blob/main/hclsyntax/spec.md)
 - main constructs
+    ```
+    arguments
+    blocks 
+    ```
     - arguments OR attributes
         - `argumentName = argumentValue`
             - `argumentValue`
