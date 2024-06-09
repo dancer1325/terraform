@@ -1,0 +1,8 @@
+- Check “terraform.tfstate”
+- == state — is stored in a — remote data store
+    - == Backends
+- allows
+    - == state — is stored in a — remote data store
+    - Output Values — can be shared with — other configurations
+        - → infrastructure — can be decomposed into — smaller components
+    - some backends can implement Locking
