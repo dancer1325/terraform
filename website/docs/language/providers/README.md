@@ -2,5 +2,23 @@
 
 - := plugin /
     - Terraform uses to
-      - create resources
-      - manage resources
+      - create resources & data sources
+      - manage resources & data sources
+    - hosted in 
+      - registries -- _Example:_ https://registry.terraform.io/ --
+      - local mirror
+- ⚠️WITHOUT providers → Terraform can NOT manage any kind of infrastructure ⚠️
+- allows
+    - configuring infrastructure platform
+      - **Reason:** 🧠based on previous points 🧠
+    - offering local utilities
+      - _Example:_ [arn_build](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/functions/arn_build)
+- recommendations
+    - 👁️restrict the provider’s version👁️
+      - **Reason:** 🧠make sure `terraform init` does NOT install newer versions 🧠
+    - track in your version control system, a Dependency Lock File
+- how do they work?
+    - once you Initializing working directories → Terraform find and install them
+    - if you change a configuration’s providers → you must reinitialize == `terraform init -upgrade`
+    - cache them — via — [`plugin_cache_dir`](https://www.notion.so/a195d06955f44581a4ece194f590fbfb?pvs=21)
+- TODO:
