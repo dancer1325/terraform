@@ -21,7 +21,9 @@
 - Type of modules
   - **root module**
     - := resources defined in `.tf` files in the **main working directory**
+      - Note: ⚠️files / defined in subfolders are sub modules⚠️
     - ≥ 1 root module / Terraform configuration
+      - 👁️at least 👁️ existing the root module 
   - **child modules**
     - := module ← which is called by — another module
       - *Example:* root module — can call → another modules
@@ -36,3 +38,12 @@
   - **remote module**
     - := module which is loaded from a remote source
     - *Example:* Terraform Registry, SCV, HTTP URLs, Terraform Cloud, Terraform Enterprise
+- best practices
+  - === (in programming languages) libraries / packages / modules
+    - → same benefits
+  - `terraform-<PROVIDER>-<NAME>`
+    - provider naming
+    - Follow it previously to publish it
+  - Design your configuration from the scratch, to add modules
+  - Use it, although it’s used just by you and no idea to publish it
+  - Look for existing one’s in Terraform Registry
